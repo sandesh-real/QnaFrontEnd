@@ -1,0 +1,33 @@
+.imgContainer
+{
+height:40rem;
+width:22rem;
+vertical-align: middle;
+position: relative;
+
+}
+.imgContainer img
+{   
+   
+ 
+    height:100%;
+    width:100%;
+
+}
+.imgContainer h2
+{
+position:absolute;
+bottom:10%;
+left:10%;
+
+color:#fff;
+
+}
+@media (min-width:850px)
+{
+    .imgContainer
+{
+height:45rem;
+
+}
+}

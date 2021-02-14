@@ -1,0 +1,220 @@
+.Main{
+    width:100%;
+    
+    
+}
+
+.TopPart
+{
+    width:100%;
+    border-radius:0.6rem;
+    margin-bottom:5rem;
+
+   
+}
+.AnswerQuestionContainer
+{
+  
+    border-radius:0.6rem;
+    width:100%;
+    padding:1rem;
+    background-color:#fff;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.068);
+
+}
+.Upper{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+}
+
+/***************more option*******************/
+
+.moreOptions
+{
+    position: relative;
+}
+
+.OptionAnchor
+{
+    text-decoration: none;
+    border: none;
+    background-color: #F6F6F6;
+    box-shadow: -3px -3px 6px #fff, 3px 3px 6px #dcd6d6;
+    padding:0rem 0.2rem;
+    outline: none;
+    cursor: pointer;
+    font-size:1.8rem;
+}
+.OptionAnchor:hover {
+    box-shadow: inset -3px -3px 6px #fff, inset 3px 3px 6px #dcd6d6;
+}
+
+.MoreOptionContainerQuestion
+{
+    position:absolute;
+    right:-78%;
+    width:7.5rem;
+    height:auto;
+    display: none;
+    z-index:10;
+}
+
+
+.OptionHider
+{
+    display:none;
+}
+.OptionShow{
+    display:block;
+}
+
+
+
+
+
+.TagAndButton
+{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.AnswerQuestionButton
+{
+    margin-top:0.5rem;
+}
+.AnswerQuestionHeading
+{
+    font-family: 'Montserrat';
+    margin-top:0.4rem;
+    font-size:1.3rem;
+    letter-spacing: 0.07rem;
+}
+.AnswerCount
+{
+    
+    margin-top:2rem;
+    height:2rem;
+    padding-top:0.5rem;
+    border-top:1px solid rgba(0, 0, 0, 0.144);
+}
+.AnswerCount p{
+    font-size:1rem;
+    font-family: 'Montserrat';
+    letter-spacing: 0.07rem;
+}
+
+.BottomPart
+{
+    width:100%;
+    height:auto;
+ 
+   
+}
+
+
+@media (min-width:520px)
+{
+    .Main{
+        margin-right:2rem;
+    }
+    .TagAndButton
+{
+ 
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:0.8rem;
+    
+}
+
+.AnswerQuestionButton
+{
+    margin-top:0rem;
+}
+.TagContainer
+{
+    margin-top:0.5rem;
+}
+.AnswerCount p{
+    font-size:1.3rem;
+  
+}
+.AnswerContainer p
+{
+font-size:1.5rem;
+}
+}
+@media (min-width:700px)
+{
+    .TopPart
+{
+    
+    margin-bottom:10rem;
+
+   
+}
+    .Main
+    {
+        width:80%;
+       
+    }
+    .AnswerQuestionContainer
+{
+    padding:3rem;
+    max-width: 670px;
+
+}
+.AnswerList
+{
+    padding:3rem;
+    max-width:670px;
+}
+.CommentAndLikes
+{
+    margin-top:2rem;
+}
+.CommentBtn,
+.LikeBtn,
+.DisLikeBtn
+{
+    font-size:1.6rem;
+}
+}
+@media (min-width:900px)
+{
+    .Main{
+        margin-right:4rem;
+    }
+.AnswerQuestionContainer
+{
+    margin-left:2rem;
+}
+ .AnswerQuestionButton
+ {
+     margin-top:2rem
+ }
+ .TagAndButton
+{
+ margin-top:0;   
+}
+ .AnswerQuestionHeading
+{
+    font-size:1.7rem;
+    margin-top: 1rem;
+}
+.AnswerCount p{
+    font-size:1.5rem;
+  
+}
+.CommentAndLikes
+{
+    padding-top:2rem;
+}
+.AnswerList
+{
+   margin-left:2rem;
+}
+}

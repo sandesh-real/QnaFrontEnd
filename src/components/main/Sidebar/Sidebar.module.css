@@ -1,0 +1,32 @@
+.Sidebar
+{
+    width:50%;
+    height:100vh;
+    background-color:#000;
+    position:fixed;
+    top:0;
+    left:0;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    z-index:6;
+    transition: transform 0.3s;
+   
+}
+.navDisplayNone{
+    display:none;
+}
+@media (min-width:500px){
+    .SideDrawer{
+        display:none;
+    }
+}
+.Open{
+
+    transform:translateX(0);
+  
+}
+.Close{
+    transform:translateX(-100%);
+  
+}

@@ -1,0 +1,19 @@
+.HeaderBottom
+{
+    width:98%;
+    background-color:#90b4c3;
+    margin:0 auto;
+    border-radius:0.7rem;
+    box-shadow: 1px 1px 4px #cacaca;
+
+}
+.navDisplayNone{
+    display:none;
+}
+
+@media (min-width:520px)
+{
+    .navDisplayNone{
+        display:block;
+    }
+}

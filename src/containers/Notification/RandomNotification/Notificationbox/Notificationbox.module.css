@@ -1,0 +1,96 @@
+.NotificationBox
+{
+    position:relative;
+  
+    border-radius:0.6rem;
+     margin-bottom:2rem;
+    padding: 1.2rem 1rem;
+    background-color: #F6F6F6;
+    box-shadow:-4px -4px 6px #fff,4px 4px 6px #dcd6d6;
+    max-width:600px;
+    margin:1.5rem auto;
+}
+   
+
+.NotificationBox .Clear
+{
+    position:absolute;
+    top:0;
+    right:0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(209, 0, 0);
+    height:100%;
+    width:0%;
+    cursor: pointer;
+    color:#fff;
+    transition:width 0.1s;
+    border-top-right-radius: 0.6rem;
+    border-bottom-right-radius:0.6rem;
+    
+}
+.Clear p{
+    font-size:0.8rem;
+    display:none;
+    font-family:'Montserrat';
+}
+.NotificationBox:hover .Clear{
+    width:8%;
+    
+}
+.NotificationBox:hover .Clear p{
+    display:block;
+}
+
+.clearClose{
+    display:none;
+    width:0;
+}
+.NotificationInfo h2
+{
+    font-size:0.9rem;
+    letter-spacing: 0.07rem;
+    font-family:'Montserrat';
+    margin-bottom:0.3rem;
+}
+.NotificationInfo p{
+    font-size:0.8rem;
+    letter-spacing: 0.07rem;
+    font-family:'Montserrat';
+}
+
+
+@media (min-width:520px)
+{
+    .InsideContainer
+    {
+        width:100%;
+        margin:0;
+    }
+    .NotificationBox
+    {
+        width:100%;
+     
+    }
+    .NotificationList{
+        width:70%;
+
+       
+    }
+    .NotificationInfo h2
+{
+    font-size:1.2rem;
+}
+.NotificationInfo p{
+    font-size:1rem;
+ 
+}
+
+.Clear p{
+    font-size:1.2rem;
+ 
+}
+
+
+}

@@ -1,0 +1,122 @@
+.friendRequest
+{
+display:inline-block;
+width: 2rem;
+height: 2rem;
+position: relative;
+}
+.addFriendPopUp
+{
+    
+    position:absolute;
+    background-color:rgba(0, 0, 0, 0.801);
+    top:-120%;
+    left:-100%;
+    padding:0.4rem 1.5rem;
+}
+.addFriendPopUp
+{
+    border-radius: 0.7rem;
+    font-family: 'Montserrat';
+    color:#fff;
+}
+.friendRequestBtn
+{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+    border:none;
+    background-color:transparent;
+ 
+    outline: none;
+    cursor: pointer;
+}
+.friendRequestBtn:hover
+{
+    color:#05B22D;
+}
+.friendRequestBtnLarge
+{
+
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+    border:none;
+    background-color:transparent;
+  
+    outline: none;
+    cursor: pointer;
+}
+
+
+
+.friendRequestActive
+{
+    color:#05B22D;
+}
+
+.friendRequestBackdrop
+{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background-color:rgba(0, 0, 0, 0.151);
+    z-index:100;
+}
+.friendRequestSuccess
+{
+    display: flex;
+    justify-content: center;
+    background-color:#f6f6f6;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:80%;
+    max-width: 500px;
+    padding:3rem 2rem;
+    border-radius: 0.7rem;
+}
+.friendRequestMessage
+{
+    font-size:1.2rem;
+    font-family: "Montserrat";
+    letter-spacing: 0.07rem;
+    width:70%;
+}
+.friendRequestOkBtnContainer
+{
+    width:30%;
+    text-align: right;
+}
+.friendRequestOkBtn
+{
+    padding:0.8rem 1.2rem;
+    background-color:#05B22D;
+    font-family: 'Montserrat';
+    border:none;
+    font-size:1.2rem;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    color:#fff;
+    outline: none;
+
+}
+
+@media (min-width:320px)
+{
+    .friendRequest
+{
+display:inline-block;
+width: 3.5rem;
+height: 3.5rem;
+}
+.addFriendPopUp
+{
+    top:-60%;
+    left:-35%;
+}
+
+}

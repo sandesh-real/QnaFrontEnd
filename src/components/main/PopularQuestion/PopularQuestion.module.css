@@ -1,0 +1,90 @@
+
+.PopularQuestion{
+    display:none;
+    font-family: 'Montserrat';
+    letter-spacing: 0.07rem;
+}
+
+@media (min-width:520px)
+{
+    .PopularQuestion
+{
+    display:block;
+    width:20%;
+    height:100%;
+   
+    height:100vh;
+    width:32vw;
+    margin-right:1rem;
+   
+}
+.PopularQuestionInternal
+{
+    width:100%;
+    height:50%;
+  
+    
+    
+}
+.PopularQuestionInternal h1{
+    font-size:0.83rem;
+    background-color:#90b4c3;
+    color:#fff;
+    letter-spacing: 0.07rem;
+    padding:0.4rem 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+.questionLists
+{
+    margin-top:0.6rem;
+    list-style:none;
+    width:100%;
+    height:auto;
+    border-left: 4px dotted #707070;
+ 
+}
+.questionList
+{
+    width:80%;
+    height:auto;
+    padding:0.1rem 0 0.8rem 0;
+    letter-spacing: 0.07rem;
+    margin:0 auto 0.3rem auto;
+    color: #F17516;
+    border-bottom:1px solid rgba(206, 206, 206, 0.308);
+    
+}
+.questionList:last-child
+{
+    
+    border-bottom:none;
+}
+.questionList a{
+    color:#F17516;
+
+    text-decoration: none;
+    font-family: 'Montserrat';
+    
+ 
+    font-size: 1rem;
+    
+    letter-spacing: 0.1rem;
+    font-family: 'Montserrat';
+}
+
+}
+
+@media (min-width:750px)
+{
+    .PopularQuestionInternal h1
+    {
+        width:150px;
+        font-size:1.2rem;
+    }
+    .questionList
+{
+    font-size:1.1rem;
+    
+}
+}

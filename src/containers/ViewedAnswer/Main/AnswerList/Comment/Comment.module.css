@@ -1,0 +1,196 @@
+.Comment
+{
+width:95%;
+background-color:#f6f6f6;
+margin:0 auto;
+padding:1rem 0.5rem;
+border-radius: 0.6rem;
+}
+.UpperPart
+{
+    display:flex;
+}
+.LowerPart
+{
+    margin:1rem 0 0.5rem 0;
+}
+.CommentList
+{
+    
+    padding:0.3rem 0.3rem 0.8rem 0.3rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.178);
+}
+.CommentText
+{
+    font-family: 'Montserrat';
+    margin-bottom:0.5rem;
+    letter-spacing: 0.1rem;
+}
+
+
+/***************more option*******************/
+
+.moreOptions
+{
+    position: relative;
+}
+
+.OptionAnchor
+{
+    text-decoration: none;
+    border: none;
+    background-color: #F6F6F6;
+    box-shadow: -3px -3px 6px #fff, 3px 3px 6px #dcd6d6;
+    padding:0rem 0.2rem;
+    outline: none;
+    cursor: pointer;
+    font-size:1.8rem;
+}
+.OptionAnchor:hover {
+    box-shadow: inset -3px -3px 6px #fff, inset 3px 3px 6px #dcd6d6;
+}
+
+
+.MoreOptionContainerComment
+{
+    position:absolute;
+    right:-78%;
+    width:7.5rem;
+    height:auto;
+    display: none;
+  
+}
+
+.OptionHider
+{
+    display:none;
+}
+.OptionShow{
+    display:block;
+}
+.cmtTextAndLike
+{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 0.3rem;
+}
+.CommentText{
+    width:70%;
+    margin:0;
+}
+
+
+/*****************************comment input container************************/
+.CommentInputContainer
+{
+    display:flex;
+    justify-content: center;
+    width:100%;
+    align-items: center;
+  
+    max-width: 440px;
+   
+}
+
+
+.Cmtprofile
+{
+    width:2rem;
+    height:2rem;
+    margin-right:1rem;
+     
+}
+.Cmtprofile img{
+    width:100%;
+    height: 100%;;
+    border-radius: 50%;
+}
+.CommentForm{
+    width:90%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Input
+{
+    width:80%;
+    margin-right:2rem;
+}
+.Input input{
+    width:100%;
+    padding:0.4rem 0.3rem;
+    border-radius: 0.7rem;
+    border:1px solid rgba(0, 0, 0, 0.377);
+    background-color:#fff;
+    
+  
+}
+
+.Input input::placeholder{
+    font-size:0.8rem;
+    letter-spacing: 0.07rem;
+    font-family: 'Montserrat';
+    padding-left:0.1rem;
+}
+.CmtBtn
+{
+    text-align: right;
+    margin-top:0.3rem;
+
+
+}
+.CmtBtn button{
+    padding:0.5rem 0.9rem !important;
+}
+
+
+
+@media (min-width:350px)
+{
+    .Input
+    {
+        width:80%;
+    }
+}
+
+
+@media (min-width:520px)
+{
+    
+    .Input input::placeholder{
+        font-size:1rem;
+    }
+    .Comment
+{
+
+padding:1rem 1rem;
+}
+}
+@media (min-width:700px)
+{
+
+
+.CommentInputContainer
+{
+    justify-content: center;
+    margin:0 auto;
+}
+
+.CommentText
+{
+font-size:1.2rem;
+}
+.Cmtprofile
+{
+width:3rem;
+height:3rem;
+}
+}
+@media (min-width:900px)
+{
+
+}

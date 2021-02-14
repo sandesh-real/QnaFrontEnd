@@ -1,0 +1,17 @@
+
+.NotificationList
+{
+    margin:2rem 0;
+  
+    width:100%;
+    
+}
+
+@media (min-width:520px)
+{
+    .NotificationList{
+        width:70%;
+
+       
+    }   
+}

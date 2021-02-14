@@ -1,0 +1,11 @@
+.ProfileStartContent
+{
+ 
+    width:100%;
+}
+.ProfileStartContent p
+{
+    text-align: center;
+    font-size:1.8rem;
+    font-family:"Montserrat";
+}

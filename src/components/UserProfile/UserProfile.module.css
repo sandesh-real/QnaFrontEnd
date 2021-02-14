@@ -1,0 +1,142 @@
+.UserProfile
+{
+    display:flex;
+    flex-direction: column;
+    height:100vh;
+}
+.Top
+{
+    height:10%;
+
+    width:100%;
+  
+}
+.LogoContainer
+{
+    width:50%;
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 3rem;
+}
+.Bottom
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.Title
+{
+    margin:2rem 0;
+    font-family: 'Montserrat';
+    letter-spacing: 0.07rem;
+    text-transform: uppercase;
+    font-size:1.5rem;
+    text-align: center;
+    position: relative;
+}
+.Title::after{
+    content:'';
+    position: absolute;
+    left:50%;
+    transform: translate(-50%,-50%);
+    bottom:-50%;
+    height:1px;
+    width:50%;
+    background-color:#F17516;
+    
+
+}
+.profileContainer
+{
+    width:100%;
+    display:flex;
+    flex-direction: column  ;
+    justify-content: center;
+    align-items: center;
+    
+    padding:2rem 2rem;
+}
+.profile
+{
+    height:10rem;
+    margin-bottom:2rem;
+    
+}
+.profile img{
+    height:100%;
+}
+.ProfileChangeBtn
+{
+      padding:1rem 1rem;
+     
+      width:100%;
+      margin:0 auto;
+}
+.userForm
+{
+    text-align: center;
+}
+.inputFile
+{
+    display: inline-block;
+
+    
+    margin-bottom:2rem;
+}
+.ProfileActionBtn
+{
+    margin:2rem 0;
+}
+.SkipButton,
+.DoneButton
+{
+    text-decoration: none;
+    display:inline-block;
+    padding:0.8rem 1.3rem;
+    font-size:1.3rem;
+    border:none;
+    outline: none;
+    border-radius:0.6rem;
+    font-family: 'Montserrat';
+    letter-spacing: 0.07rem;
+    color:#fff;
+    background-color:#F17516;
+}
+
+
+.SkipButton
+{
+    margin-right:1rem;
+}
+@media (min-width:280px)
+{
+    
+.inputFile
+{
+    display: inline-block;
+    margin-left:5rem;   
+    margin-bottom:2rem;
+}
+}
+
+@media (min-width:520px)
+{
+    .Title
+    {
+                  
+        font-size:2rem;
+ 
+       
+    }
+ 
+.inputFile
+{
+    display: inline-block;
+    margin-left:5rem;   
+    margin-bottom:2rem;
+}
+}

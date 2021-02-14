@@ -1,0 +1,108 @@
+.textArea
+{
+    position:absolute;
+    top:23%;
+    left:7%;
+    background: #fff;
+   border:none;
+    border-radius: 0.8rem;
+    padding: 6px 16px;
+    resize: none;
+    width:85%;
+    height:40%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none
+   
+} 
+.selectDesign
+{
+    height:auto;
+    position:absolute;
+    font-family: "Roboto";
+    color:#fff;
+}
+.selectDesign .select
+{
+   
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0.2rem 0.1rem 0.2rem 1rem;
+    font-size:0.8rem;
+    letter-spacing: 0.07rem;
+    line-height: 1.5rem;
+    border-radius: 20px;
+    border:none;
+    outline: 0;
+    position: relative;
+    color:#000;
+    overflow:hidden;
+    cursor:pointer;
+   
+}
+.selectDesign .select::-ms-expand
+{
+    display:none;
+}
+.selectDesign:after{
+    content:'\25BC';
+    position:absolute;
+    top:0;
+    right:0;
+    border-radius:0 10px 10px 0;
+   width:1.2rem;
+   padding:0.3rem;
+    background:#000;
+    cursor: pointer;
+    pointer-events: none;
+    transition:.25s all ease;
+}
+
+
+.selectDesign:hover::after
+{
+    color:#23b490;
+}
+
+.selectDesign.selectSubject{
+
+    top:75%;
+    left:8%;
+   
+}
+.selectDesign.selectAnnonymity
+{
+top:12%;
+right:8%;
+
+}
+
+.selectDesign.selectSubject .select
+{
+    padding: 0.2rem 3rem 0.2rem 1.5rem;
+    line-height: 1.5rem;
+}
+
+
+@media (min-width:320px)
+{
+    .selectDesign .select
+        {
+            padding: 0.4rem 0.1rem 0.4rem 1rem;
+            font-size:1.2rem;
+            letter-spacing: 0.07rem;
+       
+        }
+        .selectDesign:after{
+        
+           
+           width:1.2rem;
+           padding:0.5rem;
+           
+        }
+        .selectDesign.selectSubject .select
+            {
+                padding: 0.4rem 6rem 0.4rem 1.5rem;
+            }
+}

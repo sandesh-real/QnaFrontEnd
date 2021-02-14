@@ -1,0 +1,96 @@
+.Notification
+{
+    width:100%;
+    height:100vh;
+  
+}
+.InsideContainer
+{
+  
+    display:flex;
+    width:90%;
+    margin:0 auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:auto;
+    padding:2rem;
+
+}
+.NotificationButtons
+{
+width:100%;
+max-width:300px;
+padding:1rem 2rem 2rem 2rem;
+
+display:flex;
+justify-content: space-around;
+
+border-bottom:2px solid rgb(212, 212, 212);
+}
+.NotificationCount,
+.FriendRequestCount,
+.AnswerRequestCount
+{
+    background-color:rgb(218, 218, 218);
+cursor: pointer;
+transition: background-color 0.3s, color 0.3s;
+text-decoration: none;
+width:3rem;
+height:3rem;
+display:flex;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+}
+.NotificationCount i,
+.FriendRequestCount i,
+.AnswerRequestCount i
+{
+    color:#05B22D;
+    font-size:1.6rem;
+    display: block;
+    
+   
+}
+.NotificationCount:hover,
+.FriendRequestCount:hover,
+.AnswerRequestCount:hover
+{
+ background-color:#05B22D;
+}
+.NotificationCount:hover i,
+.FriendRequestCount:hover i,
+.AnswerRequestCount:hover i
+{
+ color:#fff;
+}
+
+.notiActive i
+{
+    color:red;  
+}
+.notiActive:hover
+{
+    background-color:red;  
+}
+
+
+@media (min-width:520px)
+{
+    .InsideContainer
+    {
+        width:100%;
+        margin:0;
+    }
+    .NotificationCount,
+.FriendRequestCount,
+.AnswerRequestCount
+{
+padding:2rem;
+}
+ 
+
+
+
+}

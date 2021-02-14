@@ -1,0 +1,41 @@
+.AddButtonContianer
+{
+    width:20%;
+    height:100%;
+   
+    display:flex;
+  
+    align-items: center;
+}
+.AddQuestionButton
+{
+    padding:0.4rem 1rem;
+    background-color:#F17516;
+    border:none;
+    border-radius: 0.5rem;  
+    font-size:1rem;   
+    letter-spacing: 0.07rem;
+    color: #F6F6F6;
+    font-family: 'Montserrat';
+     
+}
+
+@media (min-width:520px)
+{
+    .AddButtonContianer
+    {
+        width:20%;
+        height:100%;
+       
+    }
+    .AddQuestionButton
+    {
+
+        font-size:1.2rem;   
+        letter-spacing: 0.07rem;
+        padding:1rem 1rem;
+               
+    }
+    
+    
+}

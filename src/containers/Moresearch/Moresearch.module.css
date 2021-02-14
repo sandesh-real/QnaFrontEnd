@@ -1,0 +1,116 @@
+.Moresearch
+{
+ 
+    width:100%;
+    padding:2rem;
+    max-width: 545px;
+}
+.MoreSearchTitle
+{
+    margin-bottom:1rem;
+    text-align: center;
+    font-family: 'Montserrat';
+    letter-spacing: 0.07rem;
+}
+.ClickedQuestionContainer
+{
+   
+    padding:0.5rem 1rem;
+    border-radius: 0.7rem;
+    box-shadow: -3px -3px 6px #fff, 3px 3px 6px #dcd6d6;
+}
+.ClickedQuestionContainer:hover{
+    box-shadow: inset -3px -3px 6px #fff, inset 3px 3px 6px #dcd6d6;
+    
+}
+.ClickedQuestionContainerQuestion
+{
+    text-decoration: none;
+    color:#000;
+    width:100%;
+    height:100%;
+    display:block;
+    font-family: 'Montserrat';
+    letter-spacing: 0.07rem;
+}
+.ClickedQuestionContainerQuestion:hover
+{
+    color:#005814;
+}
+
+.OtherRelatedQuestion
+{
+    margin-top:3rem;
+    padding:0.8rem 1rem;
+    border-radius: 0.7rem;
+    box-shadow: -3px -3px 6px #fff, 3px 3px 6px #dcd6d6;
+}
+.OtherRelateQuestionTitle
+{
+    font-family: 'Montserrat';
+    letter-spacing: 0.07rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.OtherRelteQuestionCollection
+{
+    margin-top:0.5rem;
+}
+.OtherRelatedQuestionLists
+{
+    list-style: none;
+    width:100%;
+    height:100%;
+}
+.OtherRelatedQuestionList
+{
+    border-radius:0.7rem;
+    margin-bottom: 0.8rem;
+}
+.OtherRelatedQuestionListNav
+{
+    background-color:#fff;
+    border-radius:0.7rem;
+    display: block;
+    text-decoration: none;
+    padding:0.5rem 0.5rem;
+    color:#000;
+    font-family: 'Montserrat';
+    letter-spacing: 0.07rem;
+}
+.OtherRelatedQuestionListNav:hover
+{
+    background-color:rgb(238, 238, 238);
+}
+@media (min-width:520px)
+{
+    .ClickedQuestionContainerQuestion
+    {
+        padding:0.7rem 0;
+        font-size:1.2rem;
+    }
+    .OtherRelatedQuestionListNav
+{
+  font-size:1.2rem;
+  padding:0.7rem 1rem;
+}
+}
+@media (min-width:600px)
+{
+    .Moresearch
+{
+ 
+    margin:0 auto;
+}
+.ClickedQuestionContainerQuestion
+{
+    padding:0.9rem 0;
+    font-size:1.3rem;
+}
+.OtherRelatedQuestionListNav
+{
+font-size:1.3rem;
+padding:0.9rem 1rem;
+}
+}

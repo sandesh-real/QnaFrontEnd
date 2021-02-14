@@ -1,0 +1,22 @@
+
+   .Logo{
+    height:10%;
+    display:flex;
+    
+    align-items: center;
+    justify-content: center;
+    color:#000;
+    font-family:'Montserrat';
+}
+.Logo a{
+   font-size:1.8rem;
+   font-weight: 700;
+}
+@media (min-width:500px)
+{
+ .Logo{
+   font-size:1.3rem;
+    align-items: center;
+    justify-content: center;
+ }
+}

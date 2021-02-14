@@ -1,0 +1,49 @@
+.middleContent
+{
+   
+    width:100%;
+   
+}
+.SubjectQuestionLists
+{
+
+    padding:1rem;
+ 
+    max-width: 555px;
+}
+.SubjectQuestionList
+{
+    list-style: none;
+    border-radius: 0.6rem;
+    
+}
+.SubjectQuestionListNav
+{
+    display: block;
+    padding:0.8rem 1.4rem;
+    text-decoration: none;
+    margin-bottom:0.5rem;
+    background-color:#fff;
+    border-radius: 0.6rem;
+    color:#000;
+    font-family: 'Montserrat';
+    letter-spacing: 0.07rem;
+    display: flex;
+    justify-content: space-between;
+  
+    
+}
+.SubjectQuestionListNav span
+{
+    color:#05B22D;
+}
+
+@media (min-width:520px)
+{
+    .SubjectQuestionListNav
+    {
+        padding:1.5rem 1.4rem;
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+}

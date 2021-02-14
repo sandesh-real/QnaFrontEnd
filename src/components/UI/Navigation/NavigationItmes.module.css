@@ -1,0 +1,91 @@
+.navContainer
+{
+width:100%;
+height:60%;
+
+}
+.navContainerLists
+{
+list-style:none;
+
+}
+.navContainerList
+{
+width:100%;
+
+height:100%;
+margin-top:0.2rem;
+font-family:'Montserrat';
+letter-spacing: 0.07rem;
+}
+.navContainerListNav
+{
+    
+    display: block;
+    text-decoration:none;
+    padding:1.2rem 2rem;
+    color:#fff;
+    font-size:1rem;
+    font-family: 'Montserrat';
+   cursor: pointer;
+}
+.navContainerListNavBtn
+{
+    display: block;
+    text-decoration:none;
+    padding:1.2rem 2rem;
+    color:#fff;
+    font-size:2rem;
+    font-family: 'Montserrat';
+    background-color:transparent;
+    outline: none;
+    border:none;
+   cursor: pointer;
+}
+.navContainerListNavBtn
+    {
+        font-size:1.2rem;
+    }
+.notiActive
+{
+    color:red;
+}
+@media (min-width:520px)
+{
+    .navContainerLists{
+        display:flex;
+        
+    }
+    .navContainerList
+    {
+        text-align: center;
+    }
+}
+@media (min-width:660px)
+{
+   
+    .navContainerListNav
+    {
+        font-size:1.5rem;
+    }
+}
+@media (min-width:750px)
+{
+ .navContainerListBtn{
+     display:flex;
+     justify-content:center;
+ }
+ .navContainerListNav
+ {
+     font-size:1.8rem;
+     
+ }
+    .navContainerListNavBtn
+    {
+      
+        height:100%;
+        font-size:1.8rem;
+     
+    }
+   
+}

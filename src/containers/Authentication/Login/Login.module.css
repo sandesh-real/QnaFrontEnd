@@ -1,0 +1,96 @@
+.ForgetPassword 
+{
+    margin:1.5rem 0;
+    font-family:'Montserrat';
+}
+.ForgetPassword p 
+{
+    color:#4793b3;
+    font-family:'Montserrat';
+    cursor: pointer;
+}
+
+.btnContainerPosition button,
+.btnContainerPosition a
+{
+    width:100%;
+    
+    font-size:1.5rem !important;
+   
+   
+}
+.OrSeprator
+{
+  margin-top:2rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Montserrat';
+
+}
+.Or
+{
+    font-size:1rem;
+    color:rgba(0, 0, 0, 0.5);
+    margin:0 1rem;
+}
+.dash
+{
+    display: inline-block;
+    height:1px;
+    width:60px;
+    background-color:rgba(0, 0, 0, 0.185);
+}
+
+.LoginWithGoogle
+{
+    margin:1.2rem 0;
+}
+
+.LoginWithGoogle button 
+{
+    width:100%;
+    border:none;
+    box-shadow: -4px -4px 6px #fff, 4px 4px 6px #dcd6d6;
+    padding:1.5rem 1rem;
+    font-size:1.3rem;
+    font-family: 'Montserrat';
+    letter-spacing: 0.07rem;
+    border-radius: 0.6rem;
+    color:#4793b3;
+
+}
+.LoginWithGoogle button:hover
+{
+    box-shadow: inset -3px -3px 6px #fff, inset 3px 3px 6px #dcd6d6;
+}
+
+@media (max-width:1125px)
+{
+    .btnContainerPosition button,
+.btnContainerPosition a
+{
+    width:100%;
+    
+    font-size:1.5rem !important ;
+   
+   
+}
+    .ForgetPassword p 
+{
+    font-size:1.3rem;   
+    letter-spacing: 0.07rem;
+}
+.LoginWithGoogle
+{
+    margin:2rem 0;
+}
+.LoginWithGoogle button 
+{
+    padding:0.8rem 1rem;
+    font-size:1.2rem;
+    border-radius: 0.6rem;
+    color:#4793b3;
+   
+}
+}

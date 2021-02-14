@@ -1,0 +1,26 @@
+
+.LikeAndDislike .LikeBtn, .DisLikeBtn
+{
+    background:transparent;
+    border:none;
+    font-size:1rem;
+    border:none;
+    outline: none;
+    cursor: pointer;
+}
+.LikeBtn:hover,
+.DisLikeBtn:hover
+{
+    color:#D81F26 
+}
+.btnactive{
+    color:#D81F26 
+}
+.LikeBtn{
+    margin-right:0.4rem;
+  
+}
+
+
+
+

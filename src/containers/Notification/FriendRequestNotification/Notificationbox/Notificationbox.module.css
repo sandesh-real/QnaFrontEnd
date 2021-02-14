@@ -1,0 +1,140 @@
+.NotificationBox
+{
+    position:relative;
+    border-radius:0.6rem;
+     margin-bottom:2rem;
+    padding: 1.2rem 1rem;
+    background-color: #F6F6F6;
+    box-shadow:-4px -4px 6px #fff,4px 4px 6px #dcd6d6;
+    max-width:600px;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+    max-width: 420px;
+    margin-bottom: 1rem;
+
+}
+   .NotiUpper{
+  
+    width:100%;
+    border-radius:0.6rem;
+
+    display: flex;
+    justify-content:flex-start;
+    flex-direction: column;
+    margin-right:1rem;
+ 
+   }
+.FriendRequestLogo
+{
+    margin-right:4rem;
+  
+}
+.NotificationBox .Clear
+{
+    position:absolute;
+    top:0;
+    right:0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(209, 0, 0);
+    height:100%;
+    width:0%;
+    cursor: pointer;
+    color:#fff;
+    transition:width 0.1s;
+    border-top-right-radius: 0.6rem;
+    border-bottom-right-radius:0.6rem;
+    
+}
+.Clear p{
+    font-size:0.8rem;
+    display:none;
+    font-family:'Montserrat';
+}
+.NotificationBox:hover .Clear{
+    width:15%;
+    
+}
+.NotificationBox:hover .Clear p{
+    display:block;
+}
+
+.clearClose{
+    display:none;
+    width:0;
+}
+.NotificationInfo
+{
+    margin-left:1rem;
+}
+.NotificationInfo h2
+{
+    font-size:0.9rem;
+    letter-spacing: 0.07rem;
+    font-family:'Montserrat';
+    margin-bottom:0.3rem;
+}
+.NotificationInfo p{
+    font-size:0.8rem;
+    letter-spacing: 0.07rem;
+    font-family:'Montserrat';
+}
+.NotiMessage{
+  
+    margin-left:1rem;
+   
+}
+.NotiMessage p{
+    font-size:0.8rem;
+    text-align:left;
+    font-family: 'Montserrat';
+    letter-spacing: 0.07rem;
+}
+
+@media (min-width:380px)
+{
+    .NotiUpper{
+        justify-content:flex-start;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+@media (min-width:520px)
+{
+    .InsideContainer
+    {
+        width:100%;
+        margin:0;
+    }
+    .NotificationBox
+    {
+        width:100%;
+     
+    }
+   
+    .NotificationInfo h2
+{
+    font-size:1.2rem;
+}
+.NotificationInfo p{
+    font-size:1rem;
+ 
+}
+
+.Clear p{
+    font-size:1.2rem;
+ 
+}
+.NotificationBox:hover .Clear{
+    width:10%;
+    
+}
+.NotiMessage p{
+    font-size:1.2rem;
+    text-align:left;
+    font-family: 'Montserrat';
+}
+
+}

@@ -1,0 +1,61 @@
+.Input
+{
+    display:flex;
+    flex-direction: column;
+    margin-bottom:2rem;
+}
+.Label
+{
+    margin-bottom:0.5rem;
+    font-size:1.2rem;
+    font-family:'Montserrat';
+    letter-spacing: 0.07rem;
+}
+.InputText
+{
+    border:2px solid transparent;
+    border-radius:0.6rem;
+    padding:1.5rem 1rem;
+    font-size:1.2rem;
+    font-family: "Montserrat";
+    letter-spacing: 0.07rem;
+}
+.InputText:focus
+{
+    outline:none;
+  
+    border:2px solid #4793b3;
+
+}
+.InputText:focus:invalid
+{
+    
+    border:2px solid #F17516;
+}
+.InputText::placeholder
+{
+    font-size:1.3rem;
+    color:rgb(187, 187, 187);
+    letter-spacing: 0.07rem;
+    font-family: 'Montserrat';
+}
+
+@media (max-width:1125px)
+{
+    .Label
+{
+  
+    font-size:1.3rem;
+   
+}
+    .InputText
+{
+    padding:1.1rem 1rem;
+    font-size:1.2rem;
+}
+.InputText::placeholder
+{
+    font-size:1.2rem;
+
+}
+}
