@@ -1,15 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Aux from "../Auxilary/Auxilary";
 import HEADER from "../../components/Header/Header";
 // import Sidebar from "../../components/main/Sidebar/Sidebar";
 import classes from "./Layout.module.css";
 import * as actions from "../../store/actions/index";
 import { connect } from "react-redux";
-import {NavLink} from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
+import ShowTextPopUpLogout from "../../helperComponent/ShowTextPopUpLogout";
+import ShowTextPopUpSearch from "../../helperComponent/ShowTextPopUpSearch";
+
+import ShowTextPopUp from "../../helperComponent/ShowTextPopUp";
 const Layout = (props) => {
   const [friendReqNoti] = useState(props.friendReqNoti);
   const [randomReqNoti] = useState(props.randomReqNoti);
+  const [isShown, setIsShown] = useState(false);
+  const [isHover, setHover] = useState(true);
+  const [isListShow, setShowList] = useState(false);
+  const whiteRef=useRef();
+  const [isShowWhiteScreen, setShowWhiteScreen] = useState(false);
   let classesLogOut = [classes.navContainerListBtn];
   useEffect(() => {
     if (friendReqNoti === false) {
@@ -18,16 +27,13 @@ const Layout = (props) => {
     if (randomReqNoti === true) {
       props.onNotiCheckRandom(props.token);
     }
-
   }, [props, friendReqNoti, randomReqNoti]);
   const [showSidebar, setShowSidebar] = useState(false);
-  const [isShown,setIsShown]=useState(false);
 
-  let classNotification=[classes.navContainerListNavBtn];
+  let classNotification = [classes.navContainerListNavBtn];
 
-  if(props.friendReqNoti || !props.randomReqNoti)
-  {
-    classNotification=[classes.navContainerListNavBtn,classes.notiActive]
+  if (props.friendReqNoti || !props.randomReqNoti) {
+    classNotification = [classes.navContainerListNavBtn, classes.notiActive];
   }
 
   const showSidebarHandler = () => {
@@ -43,54 +49,188 @@ const Layout = (props) => {
       window.location.reload();
     }, 1000);
   };
-  let changeUppeMainContainer=[classes.sideFoldableNav]
-  let chageOtherBodyContain=[classes.otherBodyContain]
-    if(isShown)
-  {
-    changeUppeMainContainer=[classes.sideFoldableNav,classes.sideFoldableNavFullOpen];
-    chageOtherBodyContain=[classes.otherBodyContain,classes.otherBodyContainBig]
+  var timeOutClose = "";
+  const onMouseHoverEnter = (value) => {
+    timeOutClose = setTimeout(() => {
+      setIsShown(value);
+    }, 100);
+  };
+
+  const onMouseHoverLeave = (value) => {
+    clearTimeout(timeOutClose);
+    setTimeout(() => {
+      setIsShown(value);
+    }, 100);
+  };
+  const onClose = () => {
+    console.log("onClick");
+    setIsShown(!isShown);
+    setHover(!isHover);
+  };
+  const showList = () => {
+    setShowList(!isListShow);
+  };
+useEffect(()=>{
+  document.body.addEventListener('click',(event)=>{
+    console.log(event.target)
+    if(event.target.className==='List_searchCollectionListNav__2bKO2'||event.target.className==='List_searchCollectionListNav__2bKO2 active')
+    {
+     setShowWhiteScreen(false);
+     return;
+    }
+  
+    if(whiteRef.current.contains(event.target))
+    {
+      return;
+    }
+  
+    setShowWhiteScreen(false);
+  })
+
+},[])
+const searchScreenHandler=()=>{
+  setShowWhiteScreen(!isShowWhiteScreen);
+}
+  let shoSearchScreenStyle = [classes.dropShadow];
+ 
+  if (isShowWhiteScreen) {
+    shoSearchScreenStyle = [classes.dropShadow, classes.whiteScreenOpen];
   }
 
-  const onMouseHover=(value)=>{
-    setTimeout(()=>{
-      setIsShown(value)
-    },200)
-   
+  let chageOtherBodyContain = [classes.otherBodyContain];
+  let changeBoxSize = [classes.sideFoldableNav];
+  let showCompany = [classes.companyName];
+  let showOtherInfo = [classes.OtherInfoLists];
+  let otherInfoUi = [classes.OtherInfoListUl];
+  if (isShown) {
+    otherInfoUi = [classes.OtherInfoListUl, classes.OtherInfoListsShow];
+    showCompany = [classes.companyName, classes.OtherInfoListsShow];
+    showOtherInfo = [classes.OtherInfoLists, classes.OtherInfoListsShow];
+    changeBoxSize = [classes.sideFoldableNav, classes.sideFoldableNavBig];
   }
-
   return (
     <Aux>
-      <div className={classes.upperMainContainer}>
-        <div
-          className={changeUppeMainContainer.join(' ')}
-          onMouseEnter={() =>onMouseHover(true) }
-          onMouseLeave={() =>onMouseHover(false)}
-        >
-          <ul className={classes.navContainerLists}>
-            <li className={classes.navContainerListBtn} id={classes.Home}><NavLink to='/' exact className={classes.navContainerListNavBtn}><i className="fas fa-home"></i> {isShown?<span className={classes.NavIconText}>Home</span>:null}</NavLink></li>
+      <div className={shoSearchScreenStyle.join(" ")}>
+        <div ref={whiteRef} className={classes.whiteSideScreen}>
+          <div className={classes.closeWhiteScreenBtn}>
+            <button onClick={searchScreenHandler}><i className="fas fa-arrow-circle-left"></i></button>
+          </div>
+          <div className={classes.searchBarStyle}>
+            <HEADER
+              searchColl={props.searchColl}
+              randomReqNoti={props.randomReqNoti}
+              friendReqNoti={props.friendReqNoti}
+              LogoutHandler={LogoutHandler}
+              show={showSidebarHandler}
+              isShow={showSidebar}
+              // innerref={whiteRef}
+            />
+          </div>
+        </div>
+      </div>
 
-            <li className={classes.navContainerListBtn}><NavLink to="/notifications"  className={classNotification.join(' ')} ><i className="fas fa-bell"></i>{isShown?<span className={classes.NavIconText}>Notification</span>:null}</NavLink></li>
-        
-         <li className={classes.navContainerListBtn}><NavLink to="/profile" className={classes.navContainerListNavBtn}><i className="fas fa-user"></i>{isShown?<span className={classes.NavIconText}>Profile</span>:null}</NavLink></li>
-            <li className={classesLogOut.join(" ")}>
-              <button
-                onClick={LogoutHandler}
-                className={classes.navContainerListNavBtn}
-              >
-                <i className="fas fa-power-off"></i>{isShown?<span className={classes.NavIconText}>Logout</span>:null}
-              </button>
-            </li>
+      <div className={classes.upperMainContainer}>
+        <div className={changeBoxSize.join(" ")}>
+          <ul className={classes.navContainerLists}>
+            <ShowTextPopUp
+              icon="fas fa-home"
+              navContainerListNavBtn={classes.navContainerListNavBtn}
+              navContainerListBtn={classes.navContainerListBtn}
+              link="/"
+              text="Home"
+            />
+            <ShowTextPopUpSearch
+              Home={classes.Home}
+              icon="fas fa-search"
+              navContainerListNavBtn={classes.navContainerListNavBtn}
+              searchScreenHandler={searchScreenHandler}
+              classLogout={classesLogOut.join(" ")}
+              text="search"
+            />
+
+            <ShowTextPopUp
+              icon="fas fa-bell"
+              navContainerListNavBtn={classes.navContainerListNavBtn}
+              navContainerListBtn={classes.navContainerListBtn}
+              text="Notification"
+              link="/notifications"
+            />
+            <ShowTextPopUp
+              icon="fas fa-user"
+              navContainerListNavBtn={classes.navContainerListNavBtn}
+              navContainerListBtn={classes.navContainerListBtn}
+              text="Profile"
+              link="/profile"
+            />
+
+            <ShowTextPopUpLogout
+              icon="fas fa-power-off"
+              navContainerListNavBtn={classes.navContainerListNavBtn}
+              LogoutHandler={LogoutHandler}
+              classLogout={classesLogOut.join(" ")}
+              text="Logout"
+            />
           </ul>
+          <div
+            onMouseEnter={isHover ? () => onMouseHoverEnter(true) : null}
+            onMouseLeave={isHover ? () => onMouseHoverLeave(false) : null}
+            className={showOtherInfo.join(" ")}
+          >
+            <h1 className={showCompany.join(" ")}>QnA</h1>
+            <div className={otherInfoUi.join(" ")}>
+              <h4 onClick={showList} className={classes.SubjectHeading}>
+                <i
+                  style={{ fontSize: "1.8rem", marginRight: "10px" }}
+                  className="fas fa-book-open"
+                ></i>
+                <span>Seventh Sem</span>{" "}
+                {isListShow ? (
+                  <i
+                    className="fas fa-angle-right"
+                    style={{ fontSize: "1.8rem", marginLeft: "10px" }}
+                  ></i>
+                ) : (
+                  <i
+                    className="fas fa-angle-down"
+                    style={{ fontSize: "1.8rem", marginLeft: "8px" }}
+                  ></i>
+                )}
+              </h4>
+              {isListShow ? (
+                <ul className={classes.SubjectLists}>
+                  {props.subjects.map((subject) => {
+                    return (
+                      <li key={subject._id} className={classes.SubjectList}>
+                        <NavLink
+                          to={{ pathname: `/subjectquestion/${subject._id}` }}
+                          className={classes.SubjectListNav}
+                        >
+                          {subject.subjectname}
+                        </NavLink>
+                      </li>
+                    );
+                  })}
+                </ul>
+              ) : null}
+            </div>
+          </div>
+          <button onClick={onClose} className={classes.bigBoxOpner}>
+            {isShown ? (
+              <i className="fas fa-angle-left"></i>
+            ) : (
+              <i className="fas fa-angle-right"></i>
+            )}
+          </button>
         </div>
         <div className={chageOtherBodyContain.join(" ")}>
-          <HEADER
+          {/* <HEADER
             searchColl={props.searchColl}
             randomReqNoti={props.randomReqNoti}
             friendReqNoti={props.friendReqNoti}
             LogoutHandler={LogoutHandler}
             show={showSidebarHandler}
             isShow={showSidebar}
-          />
+          /> */}
 
           {/* <Sidebar
             randomReqNoti={props.randomReqNoti}
@@ -113,6 +253,7 @@ const mapStateToProps = (state) => {
     randomReqNoti: state.notification.randomReqNoti,
     allDone: state.auth.allDone,
     searchColl: state.Question.searchColl,
+    subjects: state.auth.subjects,
   };
 };
 const mapDispatchToProps = (dispatch) => {

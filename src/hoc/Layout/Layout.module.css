@@ -1,5 +1,7 @@
+
 .main {
   display: flex;
+  margin-top: 5rem;
 }
 .upperMainContainer {
 position:relative;
@@ -7,12 +9,15 @@ position:relative;
 .sideFoldableNav {
   z-index: 3;
   position: fixed;
-  bottom: 0;
+
   width: 100%;
-  height: 8vh;
+
   border-radius: 0.3rem;
   box-shadow: 1px 1px 4px #000c;
   background-color: #131313;
+  display: flex;
+  border-radius: 0.07rem;
+ 
 }
 
 .otherBodyContain {
@@ -25,6 +30,8 @@ position:relative;
   flex-direction: row;
 justify-content: center;
   margin-top: 0.5rem;
+  max-width:54px;
+  
 }
 
 .navContainerListNavBtn {
@@ -47,7 +54,34 @@ justify-content: center;
 {
     color:red;
 }
-@media (min-width: 520px) {
+
+.bigBoxOpner
+{
+  display: none;
+  position: absolute;
+  top: 50%;
+  height: 30px;
+  width: 30px;
+  right: -22px;
+  padding: 5px;
+  background: #fff;
+  font-family: "Montserrat";
+  color: #131313;
+  border: none;
+  font-size: 2rem;
+  font-weight: 700;
+  outline: none;
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.555),1px -1px 1px rgba(0, 0, 0, 0.555);
+}
+.bigBoxOpner:hover{
+  background-color: #90b4c3;
+  color:#fff;
+
+}
+
+
   .navContainerLists {
     display: flex;
     flex-direction: column;
@@ -64,15 +98,16 @@ justify-content: center;
   .navContainerListBtn {
     display: flex;
   
-    
+    border-bottom: 2px solid transparent;
     width:100%;
 
-
+    position:relative;
   }
 
   .navContainerListBtn:hover{
-    background-color: #90b4c3;
+    background-color: rgba(255, 255, 255, 0.808);
     border-bottom: 2px solid #fff;
+ 
   }
   .navContainerListBtn:last-child{
   
@@ -84,19 +119,18 @@ justify-content: center;
   }
   .sideFoldableNav {
     position: fixed;
-    top:8px;
+    top:0;
     left:0;
-    width: 54px;
-    height: 98vh;
-    
+    /* width: 287px; */
+    width:70px;
+   
+   
+    height: 100%;
+    transition:width 0.3s;
    
   }
-  .sideFoldableNavFullOpen{
-  
-    width:195px;
-  
-    z-index:10;
-}
+
+
 
   .otherBodyContain {
     width: 96%;
@@ -111,10 +145,11 @@ justify-content: center;
   
     height: 100%;
     font-size: 1.6rem;
+    
    
   }
   .navContainerListNavBtn:hover{
-    color:#fff;
+    color:#000;
   }
   .NavIconText
 {
@@ -124,9 +159,134 @@ justify-content: center;
   text-transform:capitalize;
   font-family: "Montserrat";
   letter-spacing: 0.07rem;
+  
 }
 #Home{
   margin-top:1rem;
 margin-bottom: auto;
+}
+.bigBoxOpner
+{
+display: block;
+}
+.OtherInfoLists
+{
+width:100%;
+padding: 2rem 2rem 2rem 2rem;
+overflow: hidden;
+
+}
+
+
+.companyName
+{
+  font-size: 2.5rem;
+  font-family: "Montserrat";
+  color:#fff;
+  margin-bottom: 2rem;
+  display: none;
+
+}
+.OtherInfoListUl
+{
+  width: 213px;
+  list-style: none;
+  
+  display:none;
+  
+}
+.OtherInfoListUlOpen{
+  display: block;
+}
+.SubjectHeading
+{
+  
+  padding: 12px 14px;
+  border-radius: 0.07rem;
+  background-color: #fff;
+ font-size:1.6rem;
+ display: flex;
+ cursor: pointer;
+ font-family: "Montserrat";
+ align-items: center;
+ letter-spacing: 0.03rem;
+}
+.SubjectLists
+{
+  list-style: none;
+  
+}
+
+.SubjectListNav
+{
+  font-family: "Montserrat";
+  display:block;
+  width:100%;
+  font-size:1.4rem;
+  padding: 13px 10px;
+  margin-bottom: 2px;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  
+  color:#000;
+  background-color: rgba(255, 255, 255, 0.808);
+}
+
+.OtherInfoList
+{
+  width:100%;
+  overflow: hidden;
+}
+
+.OtherInfoListsShow{
+  display: block;
+}
+.sideFoldableNavBig{
+  width: 287px;
+}
+.dropShadow{
+  position:fixed;
+  top:0;
+  left:0;
+  background-color: rgba(0, 0, 0, 0.418);
+  height:100%;
+  width:0;
+  z-index: 100;
+  transition:width 0.3s;
+  overflow: hidden;
+}
+.whiteSideScreen
+{
+  position:absolute;
+  top:0;
+  left:0;
+  background-color: #f6f6f6;
+  height:100vh;
+  width:50%;
+  z-index: 100;  
+}
+.closeWhiteScreenBtn
+{
+  position:absolute;
+  top: 7%;
+  left: 5%;
+  
+}
+.closeWhiteScreenBtn button
+{
+  padding:7px 8px;
+  border:none;
+  font-size: 2rem;
+  background-color: transparent;
+}
+.whiteScreenOpen{
+  width:100%;
+}
+
+@media(max-width:600px)
+{
+  .whiteSideScreen
+{
+  width:100%;
 }
 }

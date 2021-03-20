@@ -16,7 +16,7 @@ const Header =(props)=>{
         
         </div> */}
         
-            <HeaderTop inputRef={props.inputRef}  searchColl={props.searchColl} searchValue={props.searchValue} searchChangeHandler={props.searchChangeHandler} />
+            <HeaderTop inneref={props.inneref}  searchColl={props.searchColl} searchValue={props.searchValue} searchChangeHandler={props.searchChangeHandler} />
             {/* <HeaderBottom   randomReqNoti={props.randomReqNoti} friendReqNoti={props.friendReqNoti} LogoutHandler={props.LogoutHandler} isShow={props.isShow}/> */}
         </div>
     )

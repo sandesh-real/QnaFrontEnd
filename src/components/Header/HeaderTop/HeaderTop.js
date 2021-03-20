@@ -5,8 +5,8 @@ import Search from './Search/Search';
 const HeaderTop=(props)=>{
     return(
         <div className={classes.HeaderTop}>
-            <Logo/>
-            <Search  inputRef={props.inputRef}  searchColl={props.searchColl} searchValue={props.searchValue} searchChangeHandler={props.searchChangeHandler}/>
+            {/* <Logo/> */}
+            <Search  inneref={props.inneref}  searchColl={props.searchColl} searchValue={props.searchValue} searchChangeHandler={props.searchChangeHandler}/>
         </div>
     )
 }

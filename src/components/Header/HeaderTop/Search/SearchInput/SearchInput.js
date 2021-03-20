@@ -9,7 +9,7 @@ const SearchInput =(props)=>{
     const [searchValue,setSearchValue]=useState('');
     const [useEffectHandler,setUseEffectHandler]=useState(false);
     const [showList,setShowList]=useState(true)
-    const inputRef = useRef();
+  
     useEffect(()=>{
       
         if(useEffectHandler){
@@ -21,7 +21,7 @@ const SearchInput =(props)=>{
        
     }
 
-    },[props,searchValue,inputRef,useEffectHandler,setUseEffectHandler]);
+    },[props,searchValue,useEffectHandler,setUseEffectHandler]);
     const searchChangeHandler=(event)=>{
        
         setSearchValue(event.target.value);
@@ -35,9 +35,10 @@ const SearchInput =(props)=>{
     const showListHandler=()=>{
         setShowList(true);
     }
+ 
     return(
         <form className={classes.SearchInput} >
-            <input ref={inputRef} type="text" value={props.searchValue} onChange={searchChangeHandler}  className={classes.SearchInputType} placeholder="search"/>
+            <input ref={props.inneref} type="text" value={props.searchValue} onChange={searchChangeHandler}  className={classes.SearchInputType} placeholder="search"/>
             
    {showList?<Aux>{props.searchColl!==null?<Aux>{props.searchColl?<div className={classes.SearchCollection}>
                 
@@ -65,4 +66,4 @@ const mapDispatchToProps=(dispatch)=>{
         onSearchSet:(data,token)=>dispatch(actions.searchColl(data,token))
     }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(SearchInput);
+export default connect(mapStateToProps,mapDispatchToProps)(SearchInput)

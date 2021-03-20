@@ -17,7 +17,7 @@ const SubjectQuestionHandler =(props)=>{
     })
     return(
         <Aux>
-        <Subject  subjects={props.subjects}/>
+        {/* <Subject  subjects={props.subjects}/> */}
         <SubjectQuestion subjectQuestionColl={subjectQuestionColl}/>
         </Aux>
     )

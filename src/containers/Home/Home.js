@@ -36,7 +36,7 @@ const Home =(props)=>{
 
     return(
         <Aux>
-             <Subject subjects={props.subjects}/>
+             {/* <Subject subjects={props.subjects}/> */}
              <MiddleContent  DeleteHandler={DeleteHandler} userId={props.userId}  username={props.username} isAnswer={props.isAnswer} questionArr={props.questionArr} token={props.token}  bodyClickOption={props.openOption}/>
              <PopularQuestion/>
         </Aux>
