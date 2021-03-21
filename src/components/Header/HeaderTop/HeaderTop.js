@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../UI/Logo/Logo';
+
 import classes from './HeaderTop.module.css';
 import Search from './Search/Search';
 const HeaderTop=(props)=>{

@@ -12,7 +12,8 @@ import Axios from 'axios';
     } 
  }
  export const authPageStart=()=>{
-     return dispatch=>{
+     return (dispatch)=>{
+   
         axios.get('http://localhost:3000/authpage').then((response)=>{
             dispatch(getFaculty(response.data.facultyName));
         })
@@ -22,7 +23,7 @@ import Axios from 'axios';
  }
  
  export const  authLogin=(question)=>{
-    
+        
      return{
          type:actionTypes.Auth_login,
          question:question,
@@ -31,13 +32,19 @@ import Axios from 'axios';
  }
  export const auth=(email,password)=>{
    
-    return dispatch=>{
-        const authData={
+    return (dispatch,state)=>{
+        state().auth.isLoading=true
+                const authData={
             email:email,
             password:password
         }
         axios.post('http://localhost:3000/user/login',authData)
         .then((res)=>{
+        if(res.data.message)
+        {
+            dispatch(authLogin(res.data.message));
+        }
+        else{
             
             localStorage.setItem('token',res.data.token);
             localStorage.setItem('allDone',res.data.allDone);
@@ -45,6 +52,8 @@ import Axios from 'axios';
            
             localStorage.setItem('homeDetail',JSON.stringify(homeDetail));
             dispatch(authLogin(homeDetail));
+        }
+            
             
         })
     }

@@ -15,8 +15,9 @@ const initialState={
     imageBuffer:null,
     allDone:false,
     redirect:null,
-    isImageChanged:false
-
+    isImageChanged:false,
+    error:'',
+    isLoading:false
 }
 
 const reducer=(state=initialState,action)=>{
@@ -45,7 +46,14 @@ const reducer=(state=initialState,action)=>{
          
         }
         case(actionTypes.Auth_login):
- 
+        if(typeof action.question==='string')
+        {
+            return{
+                ...state,
+                error:action.question,
+                isLoading:false,
+            }
+        }
         return{
             ...state,
             questionArr:action.question.questions,
@@ -57,6 +65,7 @@ const reducer=(state=initialState,action)=>{
             username:action.question.username,
             allDone:action.question.allDone,
             userId:action.question.user_id,
+            isLoading:false
            
 
         }

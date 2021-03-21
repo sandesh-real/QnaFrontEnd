@@ -16,6 +16,7 @@ const Login =(props)=>{
                 // placeholder:"Email..."
 
             },
+        
             value:''
         },
         Password:{
@@ -28,7 +29,9 @@ const Login =(props)=>{
             },
             value:''
         },
+       
     });
+    const [ formValidation,setFormVaildatoin]=useState([]);
     const inputChangeHandler=(event,inputIdentifier)=>{
         const updateOrderForm={
             ...userDetailLogin
@@ -42,7 +45,12 @@ const Login =(props)=>{
     }
     const submitHandler=(event)=>{
         event.preventDefault();
-
+        if(userDetailLogin.Email.value==='' || userDetailLogin.Password.value==='' )
+        {
+            setFormVaildatoin(["All fields are mandatory"])
+            return;
+        }
+        setFormVaildatoin([])
         props.onAuth(userDetailLogin.Email.value,userDetailLogin.Password.value,props.token);
       
      
@@ -56,8 +64,8 @@ for(let key in userDetailLogin)
         config:userDetailLogin[key],
     })
 }
-let form=(<form onSubmit={(event)=>submitHandler(event)}>
- 
+let form=(<form style={{position:"relative"}} onSubmit={(event)=>submitHandler(event)}>
+        <span className={classes.errorMessage} >{formValidation.length>0?formValidation:props.error}</span>
     {formElementArray.map((formElement)=>(
        
         <Input clicked={(event)=>inputChangeHandler(event,formElement.id)} value={formElement.config.value} key={formElement.id} selectType={formElement.config.selectType} elementType={formElement.config.elementType} elementConfig={formElement.config.elementConfig} label={formElement.id}/>
@@ -85,7 +93,9 @@ let form=(<form onSubmit={(event)=>submitHandler(event)}>
 }
 const mapStateToProps=(state)=>{
     return{
-        token:state.auth.token
+        token:state.auth.token,
+        error:state.auth.error,
+ 
     }
 }
 const mapDispatchToProps=(dispatch)=>{

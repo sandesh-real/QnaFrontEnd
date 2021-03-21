@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import * as actions from '../../store/actions/index';
 import Aux from '../../hoc/Auxilary/Auxilary'
 import {quotes,myTeam} from '../../Constant';
+import Loding from '../../helperComponent/Loader/Loader'
 
 const Authentication =(props)=>{
     const [toggleAuth,setToggleAuth]=useState(true);
@@ -91,6 +92,9 @@ const Authentication =(props)=>{
        }
     setCircleDesign(!circleDesign)
    }
+   if(props.isLoading){
+   return <Loding/>
+   }
     return(
         <Aux>
       
@@ -153,7 +157,8 @@ const Authentication =(props)=>{
 }
 const mapStateToProps=(state)=>{
     return{
-        faculty:state.auth.faculty
+        faculty:state.auth.faculty,
+        isLoading:state.auth.isLoading
     }
 
 }

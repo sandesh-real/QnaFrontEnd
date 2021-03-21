@@ -1,7 +1,6 @@
 import React,{useEffect} from 'react';
 import Aux from '../../hoc/Auxilary/Auxilary';
 import MiddleContent from '../../components/main/MiddleContent/MiddleContent';
-import Subject from '../../components/main/Subject/Subject';
 import PopularQuestion from '../../components/main/PopularQuestion/PopularQuestion';
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions/index';

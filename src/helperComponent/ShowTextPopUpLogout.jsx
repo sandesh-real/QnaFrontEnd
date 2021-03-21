@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classes from "./ShowTextPopUp.module.css";
-import { NavLink } from "react-router-dom";
+
 
 const ShowTextPopUp = ({
   text,

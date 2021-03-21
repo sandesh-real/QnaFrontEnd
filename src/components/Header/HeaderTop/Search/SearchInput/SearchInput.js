@@ -1,4 +1,4 @@
-import React,{useState,useEffect,useRef} from 'react';
+import React,{useState,useEffect} from 'react';
 import classes from './SearchInput.module.css';
 import List from './List/List';
 import * as actions from '../../../../../store/actions/index';

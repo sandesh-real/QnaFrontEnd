@@ -5,11 +5,11 @@ import HEADER from "../../components/Header/Header";
 import classes from "./Layout.module.css";
 import * as actions from "../../store/actions/index";
 import { connect } from "react-redux";
-import { NavLink } from "react-router-dom";
+
 
 import ShowTextPopUpLogout from "../../helperComponent/ShowTextPopUpLogout";
 import ShowTextPopUpSearch from "../../helperComponent/ShowTextPopUpSearch";
-
+import SidaNavOtherLists from '../../helperComponent/SidaNavOtherLists'
 import ShowTextPopUp from "../../helperComponent/ShowTextPopUp";
 const Layout = (props) => {
   const [friendReqNoti] = useState(props.friendReqNoti);
@@ -30,11 +30,11 @@ const Layout = (props) => {
   }, [props, friendReqNoti, randomReqNoti]);
   const [showSidebar, setShowSidebar] = useState(false);
 
-  let classNotification = [classes.navContainerListNavBtn];
+  // let classNotification = [classes.navContainerListNavBtn];
 
-  if (props.friendReqNoti || !props.randomReqNoti) {
-    classNotification = [classes.navContainerListNavBtn, classes.notiActive];
-  }
+  // if (props.friendReqNoti || !props.randomReqNoti) {
+  //   classNotification = [classes.navContainerListNavBtn, classes.notiActive];
+  // }
 
   const showSidebarHandler = () => {
     setShowSidebar(true);
@@ -44,7 +44,8 @@ const Layout = (props) => {
   // };
   const LogoutHandler = () => {
     props.dologout(props.token);
-    console.log(props.allDone);
+  
+    props.history.push('/');
     setTimeout(() => {
       window.location.reload();
     }, 1000);
@@ -177,42 +178,8 @@ const searchScreenHandler=()=>{
             className={showOtherInfo.join(" ")}
           >
             <h1 className={showCompany.join(" ")}>QnA</h1>
-            <div className={otherInfoUi.join(" ")}>
-              <h4 onClick={showList} className={classes.SubjectHeading}>
-                <i
-                  style={{ fontSize: "1.8rem", marginRight: "10px" }}
-                  className="fas fa-book-open"
-                ></i>
-                <span>Seventh Sem</span>{" "}
-                {isListShow ? (
-                  <i
-                    className="fas fa-angle-right"
-                    style={{ fontSize: "1.8rem", marginLeft: "10px" }}
-                  ></i>
-                ) : (
-                  <i
-                    className="fas fa-angle-down"
-                    style={{ fontSize: "1.8rem", marginLeft: "8px" }}
-                  ></i>
-                )}
-              </h4>
-              {isListShow ? (
-                <ul className={classes.SubjectLists}>
-                  {props.subjects.map((subject) => {
-                    return (
-                      <li key={subject._id} className={classes.SubjectList}>
-                        <NavLink
-                          to={{ pathname: `/subjectquestion/${subject._id}` }}
-                          className={classes.SubjectListNav}
-                        >
-                          {subject.subjectname}
-                        </NavLink>
-                      </li>
-                    );
-                  })}
-                </ul>
-              ) : null}
-            </div>
+            <SidaNavOtherLists otherInfoUi={otherInfoUi} showList={showList} SubjectHeading={classes.SubjectHeading} isListShow={isListShow} SubjectLists={classes.SubjectLists} subjects={props.subjects} SubjectList={classes.SubjectList} SubjectListNav={classes.SubjectListNav}/>
+
           </div>
           <button onClick={onClose} className={classes.bigBoxOpner}>
             {isShown ? (
