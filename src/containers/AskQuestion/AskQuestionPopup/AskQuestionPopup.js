@@ -26,10 +26,10 @@ const AskQuestionPopup =(props)=>{
             elementType:'select',
             selectType:'annonymity',
             elementConfig:{
-                options:[{value:'private',displayValue:'Private(profile visible)'},
-                        { value:'public',displayValue:'Public(profile hidden)'}]
+                options:[{value:true,displayValue:'Private(profile visible)'},
+                        { value:false,displayValue:'Public(profile hidden)'}]
             },
-            value:''
+            value:false
         },
         subject:{
         

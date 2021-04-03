@@ -3,7 +3,8 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState={
     viewAnswerData:null,
     q_id:null,
-    canReloadAnswer:false
+    canReloadAnswer:false,
+    isLoading:true
 }
 
 const reducer=(state=initialState,action)=>{
@@ -15,13 +16,15 @@ const reducer=(state=initialState,action)=>{
                 ...state,
                 viewAnswerData:action.data,
                 q_id:action.q_id,
+                isLoading:false,
                
             }   
         }
         return{
             ...state,
             viewAnswerData:action.data,
-            q_id:action.q_id
+            q_id:action.q_id,
+            isLoading:false,
         }
         case(actionTypes.RESET_VIEWANSWER):
         {

@@ -29,7 +29,7 @@ const Main=(props)=>{
     {
         OptionClassQuesiton=[classes.MoreOptionContainerQuestion,classes.OptionShow];
     }
- 
+    console.log(props.viewAnswerData)
     return(
     
         <div className={classes.Main}>
@@ -39,7 +39,7 @@ const Main=(props)=>{
                 <div className={classes.AnswerQuestionContainer}>
                 <div className={classes.Upper}>
                 <div className={classes.ProfileContaier}>
-                    <Profile  friendRequestshow='true' username={props.viewAnswerData[0].username} otherUserId={props.viewAnswerData[0].user_id} avatar={props.viewAnswerData[0].questionAvatar} >5 hrs ago</Profile>
+                    <Profile annonymity={props.viewAnswerData[0].annonymity}  friendRequestshow='true' username={props.viewAnswerData[0].username} otherUserId={props.viewAnswerData[0].user_id} avatar={props.viewAnswerData[0].questionAvatar} >5 hrs ago</Profile>
                 </div>
                 <div className={classes.moreOptions} >
         <button className={classes.OptionAnchor} onClick={showMoreOptionQuestion}>

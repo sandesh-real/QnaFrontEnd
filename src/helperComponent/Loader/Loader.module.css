@@ -1,13 +1,17 @@
 .ldsroller {
     display: inline-block;
-    position: relative;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     width: 80px;
     height: 80px;
-    background-color: tomato;
+    
   }
   .ldsroller div {
     animation: ldsroller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     transform-origin: 40px 40px;
+  
   }
   .ldsroller div:after {
     content: " ";
@@ -16,7 +20,7 @@
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #fff;
+    background: #131313;
     margin: -4px 0 0 -4px;
   }
   .ldsroller div:nth-child(1) {

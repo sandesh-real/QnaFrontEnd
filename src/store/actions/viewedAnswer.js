@@ -15,11 +15,12 @@ export const viewanswerInitialState=(data,id)=>{
 
 export const viewanswerInitialStateSetUP=(id,token)=>{
     
-return dispatch=>{
+return (dispatch,state)=>{
+    
     Axios.post(`http://localhost:3000/viewAnswer/${token}&id=${id}`)
     .then((res)=>{
-      
-       dispatch(viewanswerInitialState(res.data.answers,res.data.id))
+        dispatch(viewanswerInitialState(res.data.answers,res.data.id))
+     
     })
 }
 

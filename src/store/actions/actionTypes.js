@@ -14,7 +14,7 @@ export const Log_out_set='Log_out_set';
 
 export const ADD_QUESTION_SUCCESS='ADD_QUESTION_SUCCESS';
 
-
+export const Set_Votes='Set_Votes'
 
 /******************search************************/
 export const Set_SEARCH_Collection='Set_SEARCH_Collection';

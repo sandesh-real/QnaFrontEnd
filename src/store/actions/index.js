@@ -1,4 +1,4 @@
-export {setMoreQuestionAgain,setMoreQuestion,searchColl,canRelodReset,addQuestion} from './Question';
+export {setMoreQuestionAgain,voteChange,voteGet,setMoreQuestion,searchColl,canRelodReset,addQuestion} from './Question';
 export {homereset,authCheckState,auth,authPageStart,authLogin,authSignup,signUpValue,divisionSelector,profilePic,allset,logout} from './auth';
 export {like,disLike,viewanswerInitialStateSetUP,resetViewAnswer,viewAnswerAdd,canRelodResetAnswer} from './viewedAnswer';
 export {comment} from './Comment';

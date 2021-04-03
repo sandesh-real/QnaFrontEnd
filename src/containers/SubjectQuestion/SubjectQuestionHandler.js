@@ -14,7 +14,7 @@ const SubjectQuestionHandler =(props)=>{
             setSubjectQuestionColl(res.data.questionColl);
         })
     
-    })
+    },[props])
     return(
         <Aux>
         {/* <Subject  subjects={props.subjects}/> */}

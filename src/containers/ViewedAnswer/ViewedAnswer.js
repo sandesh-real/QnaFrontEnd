@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './ViewedAnswer.module.css';
 import Main from './Main/Main';
+import Loader from '../../helperComponent/Loader/Loader'
 import RelatedQuestion from './RelatedQuestion/RelatedQuestion';
 // import {useHistory} from 'react-router-dom';
 import {connect} from 'react-redux';
@@ -16,8 +17,13 @@ const ViewedAnswer=(props)=>{
    
     }
 
+if(props.isLoading)
+{
+  return(
+    <Loader/>
+    )
+}
 
-  
   return(
     <div className={classes.ViewedAnswer}>
         {viewAnswerData?<Main {...props}  viewAnswerData={viewAnswerData}  q_id={props.q_id}  token={props.token}/>:null}
@@ -28,7 +34,8 @@ const ViewedAnswer=(props)=>{
 }
 const mapStateToProps=(state)=>{
   return{
-    token:state.auth.token
+    token:state.auth.token,
+    isLoading:state.viewAnswer.isLoading
       // viewanswerdata:state.viewAnswer.viewAnswerData
   }
 }

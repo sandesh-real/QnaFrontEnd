@@ -3,7 +3,8 @@ const initialState={
     openOption:false,
     canReload:false,
     searchColl:null,
-    moreRelatedQuestion:null
+    moreRelatedQuestion:null,
+    votes:0
 }
 const reducer=(state=initialState,action)=>{
    
@@ -24,6 +25,11 @@ const reducer=(state=initialState,action)=>{
             ...state,
             searchColl:action.searchColl
         }
+        case (actionTypes.Set_Votes):
+            return{
+                ...state,
+                votes:action.votes
+            }
         case(actionTypes.Set_Question_For_More_Question):
         return{
             ...state,

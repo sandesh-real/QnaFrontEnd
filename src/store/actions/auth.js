@@ -31,9 +31,9 @@ import Axios from 'axios';
      }
  }
  export const auth=(email,password)=>{
-   
+    
     return (dispatch,state)=>{
-        state().auth.isLoading=true
+      
                 const authData={
             email:email,
             password:password
@@ -161,6 +161,7 @@ import Axios from 'axios';
          redirect:redirect
      }
  }
+ 
  export const logout=(token)=>{
         
     return dispatch=>{

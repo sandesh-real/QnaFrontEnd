@@ -17,7 +17,7 @@ const initialState={
     redirect:null,
     isImageChanged:false,
     error:'',
-    isLoading:false
+    isLoading:true
 }
 
 const reducer=(state=initialState,action)=>{
@@ -109,6 +109,7 @@ const reducer=(state=initialState,action)=>{
             token:null,
             faculty:null,
             allDone:false,
+            isLoading:false,
             redirect:action.redirect
         }
         default:
