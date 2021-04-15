@@ -8,17 +8,41 @@ import Profile from "../Profile/Profile";
 import MoreOption from "../MoreOption/MoreOption";
 import ReactHtmlParser from "react-html-parser";
 import * as actions from "../../../store/actions/index";
-
+import axios from 'axios';
 const Question = (props) => {
   const [opner, setOpner] = useState(false);
-
+  const [votes,setVotes]=useState(0);
+  const [alreadyVoteDown,setAlreadyVoteDown]=useState(false);
+  const [alreadyVoteUp,setAlreadyVoteUp]=useState(false);
+  const {ongetVotes,token,id,userId}=props;
   useEffect(() => {
-    props.ongetVotes(props.token, props.id);
-  }, [props]);
-
+    axios.get(`http://localhost:3000/getVotes/${token}&q_id=${id}`)
+    .then((res)=>{
+      setVotes(res.data.votes)
+     let user_id= res.data.userVote.slice(0,res.data.userVote.length-4)
+     let incDec=res.data.userVote.slice(res.data.userVote.length-4,res.data.userVote.length)
+     
+     console.log(user_id===`,${userId}`);
+     if(user_id===`,${userId}` && incDec==='inc')
+     {
+     setAlreadyVoteUp(true)
+       
+    }
+    else{
+      setAlreadyVoteDown(true)
+    }
+    
+  }, [ongetVotes,token,id,userId]);
+  });
   let OptionClass = [classes.MoreOptionContainer];
   const onVoteChanges = (val) => {
-    props.onVoteChange(props.token, { q_id: props.id, val: val });
+    console.log(props.id)
+    axios.post(`http://localhost:3000/voteChange/${props.token}`,{ q_id: props.id, val: val })
+    .then((res)=>{
+       
+        setVotes(res.data.votes)
+    })
+    
   };
   const showMoreOption = (event) => {
     setOpner(!opner);
@@ -65,15 +89,18 @@ const Question = (props) => {
             </div>
           ) : null}
         </div>
-        <button className={classes.voteValue}>{props.votes}</button>
+        {/* style={{color:alreadyVoteUp?"red":"#000"}}*/}
+        <button onClick={() => onVoteChanges("inc")} className={classes.voteValue}  >{votes}</button>
         <div
           style={{ position: "relative" }}
           onMouseEnter={() => onMouseHover(true,'dec')}
           onMouseLeave={() => onMouseHover(false,'dec')}
         >
+         {/* style={{color:alreadyVoteDown?"red":"#000"}} */}
           <button
             className={classes.VoteUpBtn}
             onClick={() => onVoteChanges("dec")}
+           
           >
             <i class="fas fa-sort-down"></i>
           </button>
@@ -153,8 +180,9 @@ const Question = (props) => {
 };
 const mapStateToProps = (state) => {
   return {
-    votes: state.Question.votes,
+    // votes: state.Question.votes,
     token: state.auth.token,
+    userId:state.auth.userId,
   };
 };
 const mapDispatchToProps = (dispatch) => {
@@ -163,4 +191,5 @@ const mapDispatchToProps = (dispatch) => {
     ongetVotes: (token, id) => dispatch(actions.voteGet(token, id)),
   };
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(Question);
