@@ -14,7 +14,7 @@ console.log(props.questionArr);
  
                {props.questionArr.map((question)=>{
                 
-                   return <Question annonymity={question.annonymity}  DeleteHandler={()=>props.DeleteHandler(question._id)} otherUserId={question.user_id} isThisMyQuestionColl={question.isThisMyQuestionColl}  username={question.username} id={question._id} viewAnswerHandler={props.viewAnswerHandler} avatar={question.userAvatar} key={question._id} isAnswer={question.isAnswer} token={props.token} >{question.title[0]}</Question>
+                   return <Question questionCreated={question.questionCreated} annonymity={question.annonymity}  DeleteHandler={()=>props.DeleteHandler(question._id)} otherUserId={question.user_id} isThisMyQuestionColl={question.isThisMyQuestionColl}  username={question.username} id={question._id} viewAnswerHandler={props.viewAnswerHandler} avatar={question.userAvatar} key={question._id} isAnswer={question.isAnswer} token={props.token} >{question.title[0]}</Question>
                })} 
        
             </div>

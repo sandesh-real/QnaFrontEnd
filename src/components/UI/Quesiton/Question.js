@@ -81,7 +81,7 @@ const Question = (props) => {
             className={classes.VoteUpBtn}
             onClick={() => onVoteChanges("inc")}
           >
-            <i class="fas fa-sort-up"></i>
+            <i className="fas fa-sort-up"></i>
           </button>
           {isShownInc ? (
             <div className={classes.voteInfo}>
@@ -102,7 +102,7 @@ const Question = (props) => {
             onClick={() => onVoteChanges("dec")}
            
           >
-            <i class="fas fa-sort-down"></i>
+            <i className="fas fa-sort-down"></i>
           </button>
           {isShownDec ? (
             <div className={classes.voteInfo}>
@@ -140,7 +140,7 @@ const Question = (props) => {
           username={props.username}
           avatar={props.avatar}
         >
-          5 hr ago
+         {props.questionCreated}
         </Profile>
 
         <h1 className={classes.QuestionText}>
@@ -185,6 +185,7 @@ const mapStateToProps = (state) => {
     userId:state.auth.userId,
   };
 };
+
 const mapDispatchToProps = (dispatch) => {
   return {
     onVoteChange: (token, data) => dispatch(actions.voteChange(token, data)),

@@ -38,7 +38,7 @@ const mapStateToProps=(state)=>{
     isLoading:state.viewAnswer.isLoading
       // viewanswerdata:state.viewAnswer.viewAnswerData
   }
-}
+} 
 const mapDispatchToProps=(dispatch)=>{
   return{
   

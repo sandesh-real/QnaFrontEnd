@@ -25,6 +25,7 @@ return (dispatch,state)=>{
 }
 
 }
+
 export const resetViewAnswer=()=>{
     return{
         type:actionTypes.RESET_VIEWANSWER
@@ -47,7 +48,7 @@ export const viewAnswerAdd=(token,answerData,q_id)=>{
             dispatch(viewAnswerSuccess())
         })
     }
-}
+} 
 
 export const canRelodResetAnswer=()=>{
     

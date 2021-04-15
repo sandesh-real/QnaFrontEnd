@@ -1,15 +1,19 @@
-import React,{useEffect} from 'react';
+import React,{useEffect, useState} from 'react';
 import Aux from '../../hoc/Auxilary/Auxilary';
 import MiddleContent from '../../components/main/MiddleContent/MiddleContent';
 import PopularQuestion from '../../components/main/PopularQuestion/PopularQuestion';
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions/index';
 const Home =(props)=>{
-   
+   const [setRefresh,isSetRefresh]=useState(true);
      useEffect(()=>{
        
         props.onRest();
-     
+        if(setRefresh)
+        {
+            props.onHomeSet(props.token);
+            isSetRefresh(false);
+        }
         if(props.canReload)
         {
             

@@ -39,7 +39,8 @@ const Main=(props)=>{
                 <div className={classes.AnswerQuestionContainer}>
                 <div className={classes.Upper}>
                 <div className={classes.ProfileContaier}>
-                    <Profile annonymity={props.viewAnswerData[0].annonymity}  friendRequestshow='true' username={props.viewAnswerData[0].username} otherUserId={props.viewAnswerData[0].user_id} avatar={props.viewAnswerData[0].questionAvatar} >5 hrs ago</Profile>
+                {console.log(props.viewAnswerData[0])}
+                    <Profile annonymity={props.viewAnswerData[0].annonymity}   friendRequestshow='true' username={props.viewAnswerData[0].username} otherUserId={props.viewAnswerData[0].user_id} avatar={props.viewAnswerData[0].questionAvatar} >{props.viewAnswerData[0].questionCreated}</Profile>
                 </div>
                 <div className={classes.moreOptions} >
         <button className={classes.OptionAnchor} onClick={showMoreOptionQuestion}>
@@ -77,6 +78,7 @@ const Main=(props)=>{
         </div>
     )
 }
+ 
 const mapStateToProps=(state)=>{
     return{
         token:state.auth.token
